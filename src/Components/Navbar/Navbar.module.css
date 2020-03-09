@@ -6,6 +6,12 @@
   justify-content: center;
   align-items: center;
 }
+.navElementWrapper {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navElement {
   width: 100px;
   height: 100px;
@@ -13,39 +19,59 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: whitesmoke;
-  margin: 10px;
   cursor: pointer;
+  margin: 10px;
+}
+.navElement a {
+  text-decoration: none;
+  color: whitesmoke;
+  width: 80%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.navElement p {
+  margin: 0;
+}
+.navElement a:hover {
+  color: orange;
 }
 .navElement i {
   font-size: 25px;
-  margin-bottom: 5px;
-}
-.navElement p {
-  font-size: 15px;
-  margin: 0;
+  margin-bottom: 10px;
 }
 .mainHead {
-  color: whitesmoke;
   width: 20%;
-  font-size: 11px;
-  text-transform: uppercase;
-  cursor: pointer;
   display: flex;
   justify-content: flex-start;
 }
-.loginText {
+.mainHead h1 {
   color: whitesmoke;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.mainHead a {
+  text-decoration: none;
+}
+.loginText {
   width: 20%;
   text-align: end;
-  font-size: 8px;
-  cursor: pointer;
   display: flex;
   justify-content: flex-end;
 }
-.navElement:hover {
-  color: orange;
+.loginText a {
+  text-decoration: none;
 }
+.loginText h1 {
+  font-size: 15px;
+  color: whitesmoke;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 .loginLogo:hover {
   color: orange;
 }

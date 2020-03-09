@@ -1,35 +1,44 @@
 import React from 'react';
 import classes from './Navbar.module.css';
-
+import { Link } from 'react-router-dom'
 const Navbar = () => {
     return (
         <div className={classes.navbarContainer}>
+
             <div className={classes.mainHead}>
-                <h1 className={classes.adminLogo}>Product Admin</h1>
+                <Link to="/">
+                    <h1 className={classes.adminLogo}>Product Admin</h1>
+                </Link>
             </div>
-            <div className={classes.navElement}>
-                <i className="fas fa-tachometer-alt"></i>
-                <p>Dashboard</p>
-            </div>
-            <div className={classes.navElement}>
-                <i className="fas fa-file-alt"></i>
-                <p>Reports^</p>
-            </div>
-            <div className={classes.navElement}>
-                <i className="fas fa-shopping-cart"></i>
-                <p>Products</p>
-            </div>
-            <div className={classes.navElement}>
-                <i className="fas fa-user"></i>
-                <p>Accounts</p>
-            </div>
-            <div className={classes.navElement}>
-                <i className="fas fa-cog"></i>
-                <p>Setting^</p>
+
+            <div className={classes.navElementWrapper}>
+                <div className={classes.navElement}>
+                    <Link to="/">
+                        <i className="fas fa-tachometer-alt"></i>
+                        <p>Dashboard</p>
+                    </Link>
+                </div>
+
+                <div className={classes.navElement}>
+                    <Link to="/products">
+                        <i className="fas fa-shopping-cart"></i>
+                        <p>Products</p>
+                    </Link>
+                </div>
+
+                <div className={classes.navElement}>
+                    <Link to="/accounts">
+                        <i className="fas fa-user"></i>
+                        <p>Accounts</p>
+                    </Link>
+                </div>
             </div>
             <div className={classes.loginText}>
-                <h1 className={classes.loginLogo}>Admin/Logout</h1>
+                <Link to="/loginpage">
+                    <h1 className={classes.loginLogo}>Admin/Logout</h1>
+                </Link>
             </div>
+
 
 
         </div>
