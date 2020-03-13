@@ -6,6 +6,7 @@ import LoginPage from './Components/LoginPage/Login';
 import AccountPage from './Components/AccountsPage/Accounts';
 import ProductPage from './Components/ProductsPage/Products';
 import Dashboard from './Components/Dashboard/Dashborad'
+import Footer from './Components/Footer/Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends React.Component {
             <Route path="/loginpage" component={LoginPage} />
             <Route path="/" component={Dashboard} />
           </Switch>
+          <Footer />
         </div>
       </BrowserRouter>
     );
