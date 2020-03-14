@@ -27,7 +27,7 @@ const Accounts = () => {
                     </div>
                     <div className={classes.profileImageSection}>
                         <div className={classes.imageWrapper}>
-                            <img src="https://pbs.twimg.com/profile_images/969073897189523456/rSuiu_Hr.jpg" alt="" className={classes.profileImage} />
+                            <img src="https://timesofindia.indiatimes.com/thumb/msid-71837037,width-800,height-600,resizemode-4/71837037.jpg" alt="" className={classes.profileImage} />
                         </div>
                         <div className={classes.trashProfileImageWrapper}>
                             <i class="fas fa-trash-alt"></i>
@@ -40,7 +40,41 @@ const Accounts = () => {
 
                 </div>
                 <div className={classes.informationAddSection}>
+                    <div className={classes.formhead}>
+                        <h3>Account Settings</h3>
+                    </div>
+                    <div className={classes.accountFormContainer}>
 
+
+                        <form action="" className={classes.accountForm}>
+                            <div className={classes.inputInfoFill}>
+                                <label htmlFor="">Account Name</label>
+                                <input type="text" />
+                            </div>
+                            <div className={classes.inputInfoFill}>
+                                <label htmlFor="">Account Email</label>
+                                <input type="text" />
+                            </div>
+                            <div className={classes.inputInfoFill}>
+                                <label htmlFor="">Password</label>
+                                <input type="text" />
+                            </div>
+                            <div className={classes.inputInfoFill}>
+                                <label htmlFor="">Re-enter Password</label>
+                                <input type="text" />
+                            </div>
+                            <div className={classes.inputInfoFill}>
+                                <label htmlFor="">Phone</label>
+                                <input type="text" />
+                            </div>
+                            <div className={classes.updateProfileBtnWrapper}>
+                                <button>Update Your Profile</button>
+                            </div>
+                            <div className={classes.deleteProfileBtnWrapper}>
+                                <button>Delete Your Account</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
