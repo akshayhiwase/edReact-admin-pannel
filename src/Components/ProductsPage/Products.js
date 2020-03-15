@@ -37,6 +37,15 @@ class Products extends React.Component {
                 </div>
             )
         })
+        const categoriesInfo = this.state.categories.map((list) => {
+            return (
+                <div className={classes.categoriList}>
+                    <p>{list}</p>
+                    <div className={classes.deletIcon}><i className="far fa-trash-alt"></i></div>
+
+                </div>
+            )
+        })
         return (
 
             <div className={classes.productsSection}>
@@ -57,9 +66,17 @@ class Products extends React.Component {
 
                         {productsInfo}
                     </div>
+                    <div className={classes.productBtnSection}><button>Add New Product</button></div>
+                    <div className={classes.productBtnSection}><button>Delete Selected Product</button></div>
                 </div>
                 <div className={classes.productCategoriesWrapper}>
-                    <h1>this is Categories</h1>
+                    <div className={classes.categoriesHead}>
+                        <h3>Product Categories</h3>
+                    </div>
+                    <div className={classes.categoriListWrapper}>
+                        {categoriesInfo}
+                    </div>
+                    <div className={classes.categoryAddBtn}><button>Add New Category</button></div>
                 </div>
 
 
