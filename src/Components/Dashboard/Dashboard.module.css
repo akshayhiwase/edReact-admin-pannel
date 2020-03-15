@@ -3,14 +3,84 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.dashboardHead {
+  margin-top: 20px;
+  width: 90%;
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: 600;
+}
+.chartSection {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.chartsWrapper {
+  width: 45%;
+  height: 400px;
+  background-color: #425566;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.notificationContentWrapper {
+  overflow: auto;
+  width: 90%;
+  height: 350px;
+}
+.notificationContent {
+  width: 90%;
+  height: 100px;
+  background-color: #486177;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  border-radius: 5px;
+}
+.notificationImage {
+  width: 25%;
+}
+.notificationImage img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+}
+.notificationInfo {
+  width: 65%;
+}
+.notificationHead {
+  width: 90%;
+}
+.notificationHead h3 {
+  color: whitesmoke;
+  font-size: 18px;
+  font-weight: 600;
+}
+.notificationInfo p {
+  margin: auto;
+  color: whitesmoke;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.notificationInfo span {
+  color: #bdcbd8;
+  margin: 0;
 }
 .orderList {
-  margin-top: 200px;
-  width: 80%;
+  /* margin-top: 200px; */
+  width: 81%;
   background-color: #425566;
-  height: 400px;
-  overflow-y: scroll;
-  overflow-x: scroll;
+  height: 450px;
+  overflow: scroll;
+  overflow-x: unset;
+  margin-bottom: 100px;
 }
 .orderList::-webkit-scrollbar {
   width: 10px;

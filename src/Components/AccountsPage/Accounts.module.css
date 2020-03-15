@@ -152,6 +152,13 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.formhead {
+  width: 100%;
+  color: whitesmoke;
+}
+.formhead h3 {
+  margin-left: 20px;
+}
 .inputInfoFill {
   width: 40%;
   height: 80px;
