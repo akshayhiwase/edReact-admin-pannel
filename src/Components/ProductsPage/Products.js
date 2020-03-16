@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Products.module.css';
 import Axios from 'axios';
 
+
 class Products extends React.Component {
     constructor(props) {
         super(props);
@@ -19,6 +20,11 @@ class Products extends React.Component {
                     products: [...responce.data.productsPage.products]
                 })
             }).catch(err => console.log(err))
+    }
+    onAddNewProductClick = () => {
+
+        const path = `addnewproduct`;
+        this.props.history.push(path);
     }
     render() {
         const productsInfo = this.state.products.map((list) => {
@@ -66,7 +72,7 @@ class Products extends React.Component {
 
                         {productsInfo}
                     </div>
-                    <div className={classes.productBtnSection}><button>Add New Product</button></div>
+                    <div className={classes.productBtnSection}><button onClick={this.onAddNewProductClick}>Add New Product</button></div>
                     <div className={classes.productBtnSection}><button>Delete Selected Product</button></div>
                 </div>
                 <div className={classes.productCategoriesWrapper}>

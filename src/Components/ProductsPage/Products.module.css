@@ -113,6 +113,13 @@
   align-items: center;
   flex-direction: column;
 }
+.categoriListWrapper::-webkit-scrollbar {
+  width: 10px;
+  background-color: #425566;
+}
+.categoriListWrapper::-webkit-scrollbar-thumb {
+  background: #6e8192;
+}
 .categoriList {
   width: 90%;
   height: 50px;

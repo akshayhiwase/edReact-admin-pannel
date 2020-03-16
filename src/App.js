@@ -7,6 +7,7 @@ import AccountPage from './Components/AccountsPage/Accounts';
 import ProductPage from './Components/ProductsPage/Products';
 import Dashboard from './Components/Dashboard/Dashborad'
 import Footer from './Components/Footer/Footer';
+import AddProduct from './Components/AddNewProduct/AddProduct';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,8 +21,10 @@ class App extends React.Component {
           <Navbar />
           <Switch>
             <Route path="/products" component={ProductPage} />
+            <Route path="/addnewproduct" component={AddProduct} />
             <Route path="/accounts" component={AccountPage} />
             <Route path="/loginpage" component={LoginPage} />
+
             <Route path="/" component={Dashboard} />
           </Switch>
           <Footer />

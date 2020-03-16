@@ -1,0 +1,118 @@
+.addNewProductSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addProductWrapper {
+  width: 60%;
+  background-color: #435c70;
+  display: flex;
+  flex-direction: column;
+}
+.addProductContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+.infoFIllSection {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.addProductHead {
+  width: 90%;
+  padding-left: 20px;
+  color: whitesmoke;
+}
+.inputFill {
+  width: 90;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: whitesmoke;
+}
+.inputFill input {
+  width: 90%;
+  height: 50px;
+  background-color: #54657d;
+  border: 0;
+  color: whitesmoke;
+  font-size: 15px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+.inputFill textarea {
+  width: 90%;
+  background-color: #54657d;
+  border: 0;
+}
+.inputFill p {
+  color: whitesmoke;
+  margin: 0;
+}
+.inputFill select {
+  width: 91%;
+  height: 50px;
+  font-size: 15px;
+  background-color: #54657d;
+  border: 0;
+  color: #acc6de;
+}
+.dateInputs {
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+}
+.dateUnitWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.addProductButton {
+  width: 100%;
+  height: 50px;
+  margin: 20px;
+}
+.addProductButton button {
+  width: 95%;
+  height: 50px;
+  color: #fff;
+  background-color: #f5a623;
+  border: 2px solid #f5a623;
+  font-size: 90%;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.uploadImageContainer {
+  width: 40%;
+}
+.uploadImage {
+  width: 100%;
+  height: 200px;
+  background-color: #aaa;
+}
+.uploadImageBtn button {
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  background-color: #f5a623;
+  border: 2px solid #f5a623;
+  font-size: 90%;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.uploadImage img {
+  width: 100%;
+  height: 200px;
+}
+button:hover {
+  background-color: #435c70;
+  color: #f5a623;
+}
