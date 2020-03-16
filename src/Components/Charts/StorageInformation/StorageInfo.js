@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Chart from 'react-apexcharts'
+import Chart from 'react-apexcharts';
+import classes from './StorageInfo.module.css';
 
 class Storage extends Component {
 
@@ -16,8 +17,10 @@ class Storage extends Component {
     render() {
 
         return (
-            <div className="donut">
-                <Chart options={this.state.options} series={this.state.series} type="donut" width="380" />
+            <div className={classes.storageChartContainer}>
+                <div className="donut">
+                    <Chart options={this.state.options} series={this.state.series} type="donut" width="380" />
+                </div>
             </div>
         );
     }

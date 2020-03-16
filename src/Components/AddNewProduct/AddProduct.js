@@ -21,11 +21,11 @@ class AddProduct extends React.Component {
                         <div className={classes.infoFIllSection}>
                             <div className={classes.inputFill}>
                                 <label>Product Name</label>
-                                <input type="text" />
+                                <input type="text" required />
                             </div>
                             <div className={classes.inputFill} >
                                 <label>Discription</label>
-                                <textarea name="" id="" cols="30" rows="10"></textarea>
+                                <textarea name="" id="" cols="30" rows="10" required></textarea>
                             </div>
                             <div className={classes.inputFill}>
                                 <p>Accounts</p>
@@ -41,11 +41,11 @@ class AddProduct extends React.Component {
                                 <div className={classes.dateInputs}>
                                     <div className={classes.dateUnitWrapper}>
                                         <label>Expire Date</label>
-                                        <input type="date" />
+                                        <input type="date" required />
                                     </div>
                                     <div className={classes.dateUnitWrapper}>
                                         <label>Units in Stock</label>
-                                        <input type="text" />
+                                        <input type="text" required />
                                     </div>
                                 </div>
                             </div>
