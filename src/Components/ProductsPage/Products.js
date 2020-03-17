@@ -14,7 +14,7 @@ class Products extends React.Component {
     componentDidMount = () => {
         Axios.get("https://reactmusicplayer-ab9e4.firebaseio.com/project-data.json")
             .then((responce) => {
-                console.log(responce.data.productsPage)
+
                 this.setState({
                     categories: [...responce.data.productsPage.categories],
                     products: [...responce.data.productsPage.products]
@@ -26,6 +26,11 @@ class Products extends React.Component {
         const path = `addnewproduct`;
         this.props.history.push(path);
     }
+    onListSelect = () => {
+        console.log("clicked")
+        return (classes.selectIcon)
+
+    }
     render() {
         const productsInfo = this.state.products.map((list) => {
             return (
@@ -33,7 +38,7 @@ class Products extends React.Component {
 
 
                     <tr className={classes.infoTr}>
-                        <td><div className={classes.selectList}><i className="fas fa-check"></i></div></td>
+                        <td><div className={classes.selectList}><input type="checkbox" /></div></td>
                         <td>{list.name}</td>
                         <td>{list.unitSold}</td>
                         <td>{list.stock}</td>
