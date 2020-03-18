@@ -1,6 +1,5 @@
 .addNewProductSection {
   width: 100%;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +9,8 @@
   background-color: #435c70;
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 .addProductContainer {
   display: flex;
@@ -115,4 +116,27 @@
 button:hover {
   background-color: #435c70;
   color: #f5a623;
+}
+@media (max-width: 768px) {
+  .addNewProductSection {
+    width: 100%;
+  }
+  .addProductWrapper {
+    width: 60%;
+  }
+  form {
+    width: 100%;
+  }
+  .addProductContainer {
+    width: 100%;
+    flex-direction: column;
+  }
+  .infoFIllSection {
+    width: 100%;
+    padding-left: 20px;
+  }
+  .uploadImageContainer {
+    width: 80%;
+    padding-left: 20px;
+  }
 }
