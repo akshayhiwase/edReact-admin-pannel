@@ -55,8 +55,6 @@
   margin-left: 25px;
   cursor: pointer;
 }
-.selectList input {
-}
 
 .deletIcon {
   width: 35px;
@@ -160,4 +158,22 @@
 button:hover {
   background-color: #435c70;
   color: #f5a623;
+}
+@media (max-width: 1200px) {
+}
+@media (max-width: 900px) {
+}
+@media (max-width: 768px) {
+  .productsSection {
+    width: 100%;
+    flex-direction: column;
+  }
+  .productInfoWrapper {
+    width: 90%;
+  }
+  .productCategoriesWrapper {
+    width: 90%;
+  }
+}
+@media (max-width: 400px) {
 }

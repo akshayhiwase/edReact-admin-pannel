@@ -153,16 +153,73 @@
   margin-left: 10px;
 }
 .orderSummeryMoving {
+  width: 10px;
+  height: 10px;
   background-color: green;
 }
 .orderSummeryPending {
+  width: 10px;
+  height: 10px;
   background-color: yellow;
 }
 .orderSummeryCancel {
+  width: 10px;
+  height: 10px;
   background-color: red;
 }
 .statusWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 1200px) {
+  .chartsWrapper {
+    width: 100%;
+  }
+  .orderListWrapper {
+  }
+}
+@media (max-width: 900px) {
+  .chartsWrapper {
+    width: 100%;
+  }
+  .orderListWrapper {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .chartsWrapper {
+    width: 100%;
+  }
+  .orderListWrapper {
+    width: 100%;
+  }
+  .orderHead {
+    width: 90%;
+  }
+  .orderHead tr {
+    width: 10%;
+  }
+  .orderHead td {
+    width: 10%;
+    font-size: 12px;
+  }
+}
+@media (max-width: 400px) {
+  .chartsWrapper {
+    width: 100%;
+  }
+  .orderListWrapper {
+    width: 100%;
+  }
+  .orderHead {
+    width: 90%;
+  }
+  .orderHead tr {
+    width: 8%;
+  }
+  .orderHead td {
+    width: 8%;
+    font-size: 10px;
+  }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import Axios from 'axios';
+import getApiResponce from "../../Utils/Utils";
 class LatestHits extends Component {
     constructor(props) {
         super(props);
@@ -33,22 +34,13 @@ class LatestHits extends Component {
     }
 
     componentWillMount = () => {
-        Axios.get("https://reactmusicplayer-ab9e4.firebaseio.com/project-data.json")
-            .then((responce) => {
-                console.log(responce.data.dasbhoardPage.latestHits.months)
 
-                this.setState({
-                    options: { xaxis: { categories: responce.data.dasbhoardPage.latestHits.months } },
-                    // series: {
-                    //     data1: responce.data.dasbhoardPage.latestHits.featured,
-                    //     data2: responce.data.dasbhoardPage.latestHits.latest,
-                    //     data3: responce.data.dasbhoardPage.latestHits.popular
-                    // }
-                })
-                console.log(this.state.options.xaxis.categories);
+        getApiResponce().then((res) => {
+            console.log(res.accountsPage)
+            this.setState({
+                options: { xaxis: { categories: res.dasbhoardPage.latestHits.months } }
             })
-            .catch(err => console.log(err))
-        // this.setState({ apiResponse: getApiRequest() })
+        }).catch(err => console.log(err))
 
     }
 

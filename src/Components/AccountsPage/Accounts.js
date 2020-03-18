@@ -1,10 +1,15 @@
 import React from 'react';
 import classes from './Accounts.module.css';
+import getApiResponce from '../Utils/Utils';
 
 
 class Accounts extends React.Component {
 
-
+    componentWillMount = () => {
+        getApiResponce().then((res) => {
+            console.log(res.accountsPage)
+        }).catch(err => console.log(err))
+    }
     onFormSubmit = (e) => {
         e.preventDefault()
         alert("Your Profile Updated Succesfully")

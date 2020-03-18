@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './Dashboard.module.css';
-import Axios from 'axios';
-import { getApiRequest } from '../Utils/Utils';
 import LatestHits from '../Charts/LatestHits/LatestHits';
 import Performance from '../Charts/Performance/Performance';
-import Storage from '../Charts/StorageInformation/StorageInfo'
+import Storage from '../Charts/StorageInformation/StorageInfo';
+import getApiResponce from '../Utils/Utils';
+
 
 class Dashboard extends React.Component {
 
@@ -13,38 +13,29 @@ class Dashboard extends React.Component {
         notificationList: [],
     }
     componentWillMount = () => {
-        Axios.get("https://reactmusicplayer-ab9e4.firebaseio.com/project-data.json")
-            .then((responce) => {
-
-                this.setState({
-                    apiResponse: responce.data.dasbhoardPage.orders,
-                    notificationList: [...responce.data.dasbhoardPage.notifications],
-
-                })
+        getApiResponce().then((res) => {
+            console.log(res)
+            this.setState({
+                apiResponse: res.dasbhoardPage.orders,
+                notificationList: [...res.dasbhoardPage.notifications]
             })
-            .catch(err => console.log(err))
-        // this.setState({ apiResponse: getApiRequest() })
-
+        }).catch(err => console.log(err))
     }
 
     orderSummeryDetails = () => {
 
-        this.state.apiResponse.filter((list) => {
-
-            if (list.status === "Moving") {
-
-                return (classes.orderSummeryMoving)
-            } else if (list.status === "Pending") {
-
-                return (classes.orderSummeryPending)
-            } else {
-
-                return (classes.orderSummeryCancel)
-            }
-
-        })
+        const response = this.state.apiResponse
+        if (response.status === "Moving") {
+            return (classes.orderSummeryMoving)
+        } else if (response.status === "Pending") {
+            return (classes.orderSummeryPending)
+        } else {
+            return (classes.orderSummeryCancel)
+        }
 
     }
+
+
 
 
     render() {
@@ -72,7 +63,7 @@ class Dashboard extends React.Component {
                         <td>#{list.orderNo}</td>
                         <td>
                             <div className={classes.statusWrapper}>
-                                <div className={[classes.orderSummery, this.orderSummeryDetails()].join(" ")}></div>
+                                <div className={[classes.orderSummery, this.orderSummeryDetails()].join("")}></div>
                                 <div className={classes.statusSummery}>{list.status}</div>
                             </div>
                         </td>

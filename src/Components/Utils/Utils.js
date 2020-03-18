@@ -1,10 +1,15 @@
 import Axios from 'axios';
 
-export const getApiRequest = () => {
-    Axios.get("https://reactmusicplayer-ab9e4.firebaseio.com/project-data.json")
-        .then((responce) => {
-            return [...responce.data]
-            // this.setState({ apiResponse: responce.data.dasbhoardPage.orders })
+const getApiResponce = async () => {
+    const apiData = await Axios.get(
+        "https://reactmusicplayer-ab9e4.firebaseio.com/project-data.json"
+    )
+        .then(response => {
+            return response.data;
         })
-        .catch(err => console.log(err))
-}
+        .catch(error => {
+            return Promise.reject({ error });
+        });
+    return Promise.resolve(apiData);
+};
+export default getApiResponce;

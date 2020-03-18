@@ -213,3 +213,15 @@ button:hover {
   background-color: #435c70;
   color: #f5a623;
 }
+@media (max-width: 768px) {
+  .createAccountSection {
+    width: 85%;
+    flex-direction: column;
+  }
+  .photoUploadSection {
+    width: 90%;
+  }
+  .informationAddSection {
+    width: 90%;
+  }
+}
