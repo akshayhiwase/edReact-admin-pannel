@@ -76,6 +76,7 @@
   width: 100%;
   height: 50px;
   margin: 20px;
+  text-align: center;
 }
 .addProductButton button {
   width: 95%;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import Axios from 'axios';
 import getApiResponce from "../../Utils/Utils";
 class LatestHits extends Component {
     constructor(props) {

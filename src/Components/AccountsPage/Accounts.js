@@ -5,10 +5,28 @@ import getApiResponce from '../Utils/Utils';
 
 class Accounts extends React.Component {
 
+    state = {
+        accountUser: [],
+        value: "",
+        account: {}
+
+    }
+
     componentWillMount = () => {
         getApiResponce().then((res) => {
-            console.log(res.accountsPage)
+            console.log(Object.keys(res.accountsPage))
+            this.setState({ accountUser: Object.values(res.accountsPage) })
         }).catch(err => console.log(err))
+
+    }
+    onAccountNameChange = (e) => {
+        const name = e.target.value;
+        console.log(name)
+        console.log(this.state.accountUser[parseInt(name)])
+        this.setState({
+            value: e.target.value,
+            account: this.state.accountUser[parseInt(name)]
+        })
     }
     onFormSubmit = (e) => {
         e.preventDefault()
@@ -37,12 +55,12 @@ class Accounts extends React.Component {
                     </div>
                     <div className={classes.accountsElements}>
                         <h3>Accounts</h3>
-                        <select className={classes.userSelectMenu}>
+                        <select className={classes.userSelectMenu} onChange={this.onAccountNameChange}>
                             <option value="0">Select Account</option>
-                            <option value="1">Admin</option>
-                            <option value="2">Editor</option>
-                            <option value="3">Murchant</option>
-                            <option value="4">Customer</option>
+                            <option value="0">Admin</option>
+                            <option value="1">Editor</option>
+                            <option value="2">Murchant</option>
+                            <option value="3">Customer</option>
                         </select>
                     </div>
                 </div>
@@ -53,7 +71,7 @@ class Accounts extends React.Component {
                         </div>
                         <div className={classes.profileImageSection}>
                             <div className={classes.imageWrapper}>
-                                <img src="https://timesofindia.indiatimes.com/thumb/msid-71837037,width-800,height-600,resizemode-4/71837037.jpg" alt="" className={classes.profileImage} />
+                                <img src={this.state.account.profilePic} alt="" className={classes.profileImage} />
                             </div>
                             <div className={classes.trashProfileImageWrapper}>
                                 <i class="fas fa-trash-alt"></i>
@@ -75,15 +93,15 @@ class Accounts extends React.Component {
                             <form action="" className={classes.accountForm} onSubmit={this.onFormSubmit}>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Account Name</label>
-                                    <input type="text" name="AccName" />
+                                    <input type="text" name="AccName" value={this.state.account.name} />
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Account Email</label>
-                                    <input type="email" name="AccEmail" />
+                                    <input type="email" name="AccEmail" value={this.state.account.email} />
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Password</label>
-                                    <input type="password" name="pwd" />
+                                    <input type="password" name="pwd" value={this.state.account.password} />
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Re-enter Password</label>
@@ -91,7 +109,7 @@ class Accounts extends React.Component {
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Phone</label>
-                                    <input type="number" name="num" />
+                                    <input type="number" name="num" value={this.state.account.phone} />
                                 </div>
                                 <div className={classes.updateProfileBtnWrapper}>
                                     <button onSubmit={this.onFormSubmit}>Update Your Profile</button>
