@@ -8,7 +8,8 @@ class Accounts extends React.Component {
     state = {
         accountUser: [],
         value: "",
-        account: {}
+        account: {},
+        accountPic: ''
 
     }
 
@@ -25,8 +26,15 @@ class Accounts extends React.Component {
         console.log(this.state.accountUser[parseInt(name)])
         this.setState({
             value: e.target.value,
-            account: this.state.accountUser[parseInt(name)]
+            account: this.state.accountUser[parseInt(name)],
+            profilePic: this.state.accountUser[parseInt(name)].profilePic,
         })
+    }
+    onUserEdited = (value) => {
+        this.setState({
+            account: value
+        })
+        console.log(value)
     }
     onFormSubmit = (e) => {
         e.preventDefault()
@@ -38,6 +46,7 @@ class Accounts extends React.Component {
             rePassword: e.target.rePwd.value,
             phone: e.target.num.value
         }
+        console.log(updatedProfileData)
         localStorage.setItem("userData", JSON.stringify(updatedProfileData))
 
 
@@ -71,7 +80,7 @@ class Accounts extends React.Component {
                         </div>
                         <div className={classes.profileImageSection}>
                             <div className={classes.imageWrapper}>
-                                <img src={this.state.account.profilePic} alt="" className={classes.profileImage} />
+                                <img src={this.state.profilePic === '' ? "https://www.osea-asia.com/wp-content/uploads/dummy-icon-male.jpg" : this.state.profilePic} alt="" className={classes.profileImage} />
                             </div>
                             <div className={classes.trashProfileImageWrapper}>
                                 <i class="fas fa-trash-alt"></i>
@@ -93,15 +102,15 @@ class Accounts extends React.Component {
                             <form action="" className={classes.accountForm} onSubmit={this.onFormSubmit}>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Account Name</label>
-                                    <input type="text" name="AccName" value={this.state.account.name} />
+                                    <input type="text" name="AccName" value={this.state.account.name} onChange={(e) => this.onUserEdited(e.target.value)} />
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Account Email</label>
-                                    <input type="email" name="AccEmail" value={this.state.account.email} />
+                                    <input type="email" name="AccEmail" value={this.state.account.email} onChange={(e) => this.onUserEdited(e.target.value)} />
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Password</label>
-                                    <input type="password" name="pwd" value={this.state.account.password} />
+                                    <input type="password" name="pwd" value={this.state.account.password} onChange={(e) => this.onUserEdited(e.target.value)} />
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Re-enter Password</label>
@@ -109,7 +118,7 @@ class Accounts extends React.Component {
                                 </div>
                                 <div className={classes.inputInfoFill}>
                                     <label htmlFor="">Phone</label>
-                                    <input type="number" name="num" value={this.state.account.phone} />
+                                    <input type="number" name="num" value={this.state.account.phone} onChange={(e) => this.onUserEdited(e.target.value)} />
                                 </div>
                                 <div className={classes.updateProfileBtnWrapper}>
                                     <button onSubmit={this.onFormSubmit}>Update Your Profile</button>
