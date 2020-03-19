@@ -71,6 +71,9 @@
   cursor: pointer;
   text-decoration: none;
 }
+.navBackGround {
+  background-color: orange;
+}
 
 .loginLogo:hover {
   color: orange;

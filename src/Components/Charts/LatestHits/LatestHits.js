@@ -18,15 +18,15 @@ class LatestHits extends Component {
             series: [
                 {
                     name: "Featured",
-                    data: [43, 20, 39, 46, 86, 66, 80]
+                    data: []
                 },
                 {
                     name: "Latest",
-                    data: [88, 70, 79, 56, 50, 55, 72]
+                    data: []
                 },
                 {
                     name: "Popular",
-                    data: [32, 47, 38, 21, 55, 75, 70]
+                    data: []
                 }
             ]
         };
@@ -37,7 +37,16 @@ class LatestHits extends Component {
         getApiResponce().then((res) => {
             console.log(res.accountsPage)
             this.setState({
-                options: { xaxis: { categories: res.dasbhoardPage.latestHits.months } }
+                options: {
+                    xaxis: {
+                        categories: res.dasbhoardPage.latestHits.months,
+                        series: [
+                            { data: [res.dasbhoardPage.latestHits.featured] },
+                            { data: [res.dasbhoardPage.latestHits.latest] },
+                            { data: [res.dasbhoardPage.latestHits.popular] }
+                        ]
+                    }
+                }
             })
         }).catch(err => console.log(err))
 

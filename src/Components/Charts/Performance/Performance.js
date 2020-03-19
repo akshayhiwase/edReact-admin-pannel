@@ -1,50 +1,70 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
+import getApiResponce from "../../Utils/Utils";
+
 
 class Performance extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
+
+            series: [{
+                data: []
+            }],
             options: {
                 chart: {
-                    id: "basic-bar"
+                    height: 350,
+                    type: 'bar',
+                    events: {
+                        click: function (chart, w, e) {
+                            // console.log(chart, w, e)
+                        }
+                    }
+                },
+                colors: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Yellow"],
+                plotOptions: {
+                    bar: {
+                        columnWidth: '45%',
+                        distributed: true
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                },
+                legend: {
+                    show: false
                 },
                 xaxis: {
-                    categories: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Orange", "Yellow"]
+                    categories: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Yellow"],
+                    labels: {
+                        style: {
+                            colors: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Yellow"],
+                            fontSize: '12px'
+                        }
+                    }
                 }
             },
-            series: [
-                {
-                    name: "series-1",
-                    data: [40, 44, 28, 38, 58, 34, 48]
-                }
-            ]
+
+
         };
     }
 
-    // componentWillMount = () => {
-    //     Axios.get("https://reactmusicplayer-ab9e4.firebaseio.com/project-data.json")
-    //         .then((responce) => {
-    //             console.log(responce.data.dasbhoardPage.latestHits.months)
 
-    //             this.setState({
-    //                 options: { xaxis: { categories: responce.data.dasbhoardPage.latestHits.months } },
-    //                 // series: {
-    //                 //     data1: responce.data.dasbhoardPage.latestHits.featured,
-    //                 //     data2: responce.data.dasbhoardPage.latestHits.latest,
-    //                 //     data3: responce.data.dasbhoardPage.latestHits.popular
-    //                 // }
-    //             })
-    //             console.log(this.state.options.xaxis.categories);
-    //         })
-    //         .catch(err => console.log(err))
-    //     // this.setState({ apiResponse: getApiRequest() })
+    componentWillMount = () => {
+        getApiResponce().then((res) => {
+            console.log(Object.values(res.dasbhoardPage.performance))
+            this.setState({ series: [...{ data: [Object.values(res.dasbhoardPage.performance)] }] })
+        }).catch(err => console.log(err))
 
-    // }
+    }
+
+
 
     render() {
         return (
+
+
             <div className="app">
                 <div className="row">
                     <div className="mixed-chart">

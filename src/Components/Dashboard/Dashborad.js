@@ -86,14 +86,17 @@ class Dashboard extends React.Component {
                 </div>
                 <div className={classes.chartSection}>
                     <div className={classes.chartsWrapper}>
+                        <div><h3>LatestHits</h3></div>
                         <LatestHits />
 
                     </div>
                     <div className={classes.chartsWrapper}>
+                        <div><h3>Performance</h3></div>
                         <Performance />
 
                     </div>
                     <div className={classes.chartsWrapper}>
+                        <div><h3>Storage</h3></div>
                         <Storage />
 
                     </div>

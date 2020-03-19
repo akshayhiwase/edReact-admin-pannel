@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Navbar.module.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 const Navbar = () => {
     return (
         <div className={classes.navbarContainer}>
@@ -13,14 +13,14 @@ const Navbar = () => {
 
             <div className={classes.navElementWrapper}>
                 <div className={classes.navElement}>
-                    <Link to="/">
+                    <Link to="/" >
                         <i className="fas fa-tachometer-alt"></i>
                         <p>Dashboard</p>
                     </Link>
                 </div>
 
                 <div className={classes.navElement}>
-                    <Link to="/products">
+                    <Link to="/products" >
                         <i className="fas fa-shopping-cart"></i>
                         <p>Products</p>
                     </Link>
