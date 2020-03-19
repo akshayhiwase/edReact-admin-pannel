@@ -10,7 +10,8 @@ class Performance extends Component {
         this.state = {
 
             series: [{
-                data: []
+                data: [],
+                colors: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Yellow"],
             }],
             options: {
                 chart: {
@@ -30,7 +31,7 @@ class Performance extends Component {
                     }
                 },
                 dataLabels: {
-                    enabled: false
+                    enabled: true
                 },
                 legend: {
                     show: false
@@ -50,11 +51,13 @@ class Performance extends Component {
         };
     }
 
-
     componentWillMount = () => {
         getApiResponce().then((res) => {
             console.log(Object.values(res.dasbhoardPage.performance))
-            this.setState({ series: [...{ data: [Object.values(res.dasbhoardPage.performance)] }] })
+
+            const performanceArray = [...Object.values(res.dasbhoardPage.performance)]
+            console.log(performanceArray)
+            this.setState({ series: [{ data: performanceArray }] })
         }).catch(err => console.log(err))
 
     }
@@ -65,7 +68,7 @@ class Performance extends Component {
         return (
 
 
-            <div className="app">
+            < div className="app" >
                 <div className="row">
                     <div className="mixed-chart">
                         <Chart
@@ -76,7 +79,7 @@ class Performance extends Component {
                         />
                     </div>
                 </div>
-            </div>
+            </div >
         );
     }
 }

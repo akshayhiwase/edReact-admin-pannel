@@ -34,19 +34,20 @@ class LatestHits extends Component {
 
     componentWillMount = () => {
 
+
         getApiResponce().then((res) => {
             console.log(res.accountsPage)
             this.setState({
                 options: {
                     xaxis: {
                         categories: res.dasbhoardPage.latestHits.months,
-                        series: [
-                            { data: [res.dasbhoardPage.latestHits.featured] },
-                            { data: [res.dasbhoardPage.latestHits.latest] },
-                            { data: [res.dasbhoardPage.latestHits.popular] }
-                        ]
                     }
-                }
+                },
+                series: [
+                    { data: [...res.dasbhoardPage.latestHits.featured] },
+                    { data: [...res.dasbhoardPage.latestHits.latest] },
+                    { data: [...res.dasbhoardPage.latestHits.popular] }
+                ]
             })
         }).catch(err => console.log(err))
 
