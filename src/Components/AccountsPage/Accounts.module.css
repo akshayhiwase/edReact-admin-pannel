@@ -225,3 +225,15 @@ button:hover {
     width: 90%;
   }
 }
+@media (max-width: 480px) {
+  .createAccountSection {
+    width: 85%;
+    flex-direction: column;
+  }
+  .photoUploadSection {
+    width: 90%;
+  }
+  .informationAddSection {
+    width: 90%;
+  }
+}

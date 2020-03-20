@@ -194,8 +194,13 @@
   .chartsWrapper {
     width: 100%;
   }
+  .orderList {
+    width: 80%;
+    overflow-x: scroll;
+  }
   .orderListWrapper {
     width: 100%;
+    overflow: auto;
   }
   .orderHead {
     width: 90%;
@@ -209,8 +214,16 @@
   }
 }
 @media (max-width: 400px) {
-  .chartsWrapper {
+  .chartSection {
     width: 100%;
+  }
+  .chartsWrapper {
+    width: 80%;
+    overflow: auto;
+  }
+  .orderList {
+    width: 80%;
+    overflow-x: scroll;
   }
   .orderListWrapper {
     width: 100%;

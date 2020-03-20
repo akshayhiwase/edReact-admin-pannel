@@ -4,10 +4,21 @@ import classes from './AddProduct.module.css';
 class AddProduct extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            image: ''
+        }
     }
     selectImage = (e) => {
-        console.log(e.target.files[0].name)
+        e.preventDefault()
+        const loder = new FileReader()
+        let file = e.target.files[0]
+        loder.onloadend = () => {
+            this.setState({ file: file, image: loder.result })
+        }
+
+        loder.readAsDataURL(file)
+
+
     }
     onUploadImageClicked = () => {
 
@@ -70,8 +81,8 @@ class AddProduct extends React.Component {
 
                             <div className={classes.uploadImageContainer}>
                                 <div className={classes.uploadImage}>
-                                    <input type="file" onChange={this.selectImage} value="" name="pdtImage" />
-                                    <img src="https://www.nicepng.com/png/detail/108-1084516_upload-to-cloud-blue-button-upload-cloud-icon.png" alt="" />
+                                    <input type="file" onChange={this.selectImage} value="" name="pdtImage" className={classes.addImage} />
+                                    <img src={this.state.image} alt="" />
                                 </div>
                                 <div className={classes.uploadImageBtn}>
                                     <button>Upload Product Image</button>

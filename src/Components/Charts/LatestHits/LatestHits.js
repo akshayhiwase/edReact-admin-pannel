@@ -36,7 +36,6 @@ class LatestHits extends Component {
 
 
         getApiResponce().then((res) => {
-            console.log(res.accountsPage)
             this.setState({
                 options: {
                     xaxis: {

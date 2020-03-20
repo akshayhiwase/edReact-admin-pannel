@@ -14,7 +14,6 @@ class Dashboard extends React.Component {
     }
     componentWillMount = () => {
         getApiResponce().then((res) => {
-            console.log(res)
             this.setState({
                 apiResponse: res.dasbhoardPage.orders,
                 notificationList: [...res.dasbhoardPage.notifications]

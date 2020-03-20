@@ -37,7 +37,6 @@ class Storage extends Component {
     }
     componentWillMount = () => {
         getApiResponce().then((res) => {
-            console.log(res.dasbhoardPage.storage)
             this.setState({ series: Object.values(res.dasbhoardPage.storage) })
         }).catch(err => console.log(err))
 

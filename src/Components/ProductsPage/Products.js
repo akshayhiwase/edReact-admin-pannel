@@ -27,7 +27,6 @@ class Products extends React.Component {
         this.props.history.push(path);
     }
     onListSelect = () => {
-        console.log("clicked")
         return (classes.selectIcon)
 
     }

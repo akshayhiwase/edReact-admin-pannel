@@ -15,15 +15,12 @@ class Accounts extends React.Component {
 
     componentWillMount = () => {
         getApiResponce().then((res) => {
-            console.log(Object.keys(res.accountsPage))
             this.setState({ accountUser: Object.values(res.accountsPage) })
         }).catch(err => console.log(err))
 
     }
     onAccountNameChange = (e) => {
         const name = e.target.value;
-        console.log(name)
-        console.log(this.state.accountUser[parseInt(name)])
         this.setState({
             value: e.target.value,
             account: this.state.accountUser[parseInt(name)],
@@ -48,8 +45,6 @@ class Accounts extends React.Component {
         }
         console.log(updatedProfileData)
         localStorage.setItem("userData", JSON.stringify(updatedProfileData))
-
-
 
     }
 

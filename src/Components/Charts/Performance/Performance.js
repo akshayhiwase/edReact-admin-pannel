@@ -14,6 +14,7 @@ class Performance extends Component {
                 colors: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Yellow"],
             }],
             options: {
+                colors: ["#00FFFF", "#0000FF", "#008000", "#FFA500", "#800080", "#FF0000", "#FFFF00"],
                 chart: {
                     height: 350,
                     type: 'bar',
@@ -21,9 +22,11 @@ class Performance extends Component {
                         click: function (chart, w, e) {
                             // console.log(chart, w, e)
                         }
-                    }
+                    },
+                    colors: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Yellow"]
+
                 },
-                colors: ["Aqua", "Blue", "Green", "Orange", "Purple", "Red", "Yellow"],
+
                 plotOptions: {
                     bar: {
                         columnWidth: '45%',
@@ -53,10 +56,7 @@ class Performance extends Component {
 
     componentWillMount = () => {
         getApiResponce().then((res) => {
-            console.log(Object.values(res.dasbhoardPage.performance))
-
             const performanceArray = [...Object.values(res.dasbhoardPage.performance)]
-            console.log(performanceArray)
             this.setState({ series: [{ data: performanceArray }] })
         }).catch(err => console.log(err))
 
