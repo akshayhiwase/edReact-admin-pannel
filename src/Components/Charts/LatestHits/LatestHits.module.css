@@ -4,13 +4,8 @@
 .mixed-chart {
   color: whitesmoke;
 }
+
 @media (max-width: 768px) {
-  .app {
-    width: 70%;
-  }
 }
 @media (max-width: 468px) {
-  .app {
-    width: 70%;
-  }
 }

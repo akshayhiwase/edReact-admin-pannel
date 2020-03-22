@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import getApiResponce from "../../Utils/Utils";
+import classes from './LatestHits.module.css';
 class LatestHits extends Component {
     constructor(props) {
         super(props);
@@ -56,15 +57,19 @@ class LatestHits extends Component {
 
 
         return (
-            <div className="app">
-                <div className="row">
-                    <div className="mixed-chart">
-                        <Chart
-                            options={this.state.options}
-                            series={this.state.series}
-                            type="line"
-                            width="500"
-                        />
+            <div className={classes.latestHitsSection}>
+
+
+                <div className="app">
+                    <div className="row">
+                        <div className="mixed-chart">
+                            <Chart
+                                options={this.state.options}
+                                series={this.state.series}
+                                type="line"
+                                width="500"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -213,7 +213,7 @@
     font-size: 12px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   .chartSection {
     width: 100%;
   }
@@ -223,7 +223,7 @@
   }
   .orderList {
     width: 80%;
-    overflow-x: scroll;
+    overflow: auto;
   }
   .orderListWrapper {
     width: 100%;
@@ -237,5 +237,8 @@
   .orderHead td {
     width: 8%;
     font-size: 10px;
+  }
+  .orderData {
+    width: 600px;
   }
 }

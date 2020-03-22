@@ -62,3 +62,23 @@ button:hover {
   background-color: #435c70;
   color: #f5a623;
 }
+@media (max-width: 768px) {
+  .loginSection {
+    height: auto;
+  }
+  .loginContaint {
+    width: 60%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 468px) {
+  .loginSection {
+    height: auto;
+  }
+  .loginContaint {
+    width: 60%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
