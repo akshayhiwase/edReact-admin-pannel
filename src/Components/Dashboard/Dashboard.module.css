@@ -81,8 +81,7 @@
   width: 81%;
   background-color: #425566;
   height: 450px;
-  overflow: scroll;
-  overflow-x: unset;
+  overflow: auto;
   margin-bottom: 100px;
 }
 .orderList::-webkit-scrollbar {
@@ -175,70 +174,108 @@
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 1200px) {
-  .chartsWrapper {
+
+@media (min-width: 1281px) {
+  .dashboardSection {
     width: 100%;
   }
-  .orderListWrapper {
-  }
-}
-@media (max-width: 900px) {
-  .chartsWrapper {
-    width: 100%;
-  }
-  .orderListWrapper {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .chartsWrapper {
-    width: 100%;
-  }
-  .orderList {
-    width: 80%;
-    overflow-x: scroll;
-  }
-  .orderListWrapper {
-    width: 100%;
-    overflow: auto;
-  }
-  .orderHead {
+  .dashboardHead {
     width: 90%;
   }
-  .orderHead tr {
-    width: 10%;
+  .chartSection {
+    width: 85%;
   }
-  .orderHead td {
-    width: 10%;
-    font-size: 12px;
+  .chartsWrapper {
+    width: 45%;
   }
 }
-@media (max-width: 460px) {
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dashboardSection {
+    width: 100%;
+  }
+  .dashboardHead {
+    width: 80%;
+  }
   .chartSection {
     width: 100%;
   }
   .chartsWrapper {
-    width: 80%;
-    overflow: auto;
+    width: 65%;
   }
   .orderList {
     width: 80%;
-    overflow: auto;
   }
   .orderListWrapper {
-    width: 100%;
+    width: 800px;
   }
   .orderHead {
-    width: 90%;
-  }
-  .orderHead tr {
-    width: 8%;
-  }
-  .orderHead td {
-    width: 8%;
-    font-size: 10px;
+    width: 800px;
   }
   .orderData {
-    width: 600px;
+    width: 800px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .dashboardSection {
+    width: 100%;
+  }
+  .dashboardHead {
+    width: 80%;
+  }
+  .chartSection {
+    width: 100%;
+  }
+  .chartsWrapper {
+    width: 65%;
+  }
+  .orderList {
+    width: 80%;
+  }
+  .orderListWrapper {
+    width: 800px;
+  }
+  .orderHead {
+    width: 800px;
+  }
+  .orderData {
+    width: 800px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .dashboardSection {
+    width: 100%;
+  }
+  .dashboardHead {
+    width: 80%;
+  }
+  .chartSection {
+    width: 100%;
+  }
+  .chartsWrapper {
+    width: 85%;
+  }
+  .notificationContentWrapper {
+    width: 100%;
+  }
+  .orderList {
+    width: 85%;
+  }
+  .orderListWrapper {
+    width: 800px;
+  }
+  .orderHead {
+    width: 800px;
+  }
+  .orderData {
+    width: 800px;
   }
 }

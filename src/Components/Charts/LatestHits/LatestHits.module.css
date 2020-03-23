@@ -5,7 +5,14 @@
   color: whitesmoke;
 }
 
-@media (max-width: 768px) {
-}
-@media (max-width: 468px) {
+@media (min-width: 320px) and (max-width: 480px) {
+  .apexcharts-canvas {
+    width: 50%;
+  }
+  .latestHits {
+    width: 50%;
+  }
+  .app {
+    width: 50%;
+  }
 }
