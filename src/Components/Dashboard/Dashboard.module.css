@@ -244,9 +244,11 @@
   }
   .orderHead {
     width: 800px;
+    margin-left: 50px;
   }
   .orderData {
     width: 800px;
+    margin-left: 50px;
   }
 }
 

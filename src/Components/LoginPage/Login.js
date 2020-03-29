@@ -1,8 +1,26 @@
 import React from 'react';
 import classes from './Login.module.css';
+import getApiResponce from '../Utils/Utils';
+
+
 
 
 class Login extends React.Component {
+
+
+
+    state = {
+        accountUser: []
+    }
+
+
+    componentWillMount = () => {
+        getApiResponce().then((res) => {
+            this.setState({ accountUser: Object.values(res.accountsPage) })
+            localStorage.setItem("AccountUser", JSON.stringify(this.state.accountUser))
+            console.log(this.state.accountUser)
+        }).catch(err => console.log(err))
+    }
 
     onUserLogin = (e) => {
         e.preventDefault();
@@ -10,10 +28,35 @@ class Login extends React.Component {
             username: e.target.username.value,
             password: e.target.password.value
         }
-        console.log(loginUser)
-        alert("Login Successful")
-        const path = ``;
-        this.props.history.push(path);
+
+        getApiResponce().then((res) => {
+            this.setState({ accountUser: Object.values(res.accountsPage) })
+            const LoginUser = Object.values(res.accountsPage).filter((user) => {
+                return user.email === loginUser.username && user.password === loginUser.password
+            })
+
+            console.log(LoginUser);
+
+            if (LoginUser[0].email === loginUser.username && LoginUser[0].password === loginUser.password) {
+
+                alert("Login Successful")
+                const path = ``;
+                this.props.history.push(path);
+            } else {
+                alert("You Are Not Authorized To Login")
+                e.target.reset()
+
+            }
+
+            localStorage.setItem("AccountUser", JSON.stringify(this.state.accountUser))
+            console.log(this.state.accountUser)
+        }).catch(err => console.log(err))
+
+
+
+
+
+
     }
 
     render() {

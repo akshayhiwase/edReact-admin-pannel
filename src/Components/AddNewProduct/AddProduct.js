@@ -1,5 +1,7 @@
 import React from 'react'
 import classes from './AddProduct.module.css';
+import { PRODUCTPAGE_LINK } from '../Utils/Links'
+
 
 class AddProduct extends React.Component {
     constructor(props) {
@@ -34,7 +36,8 @@ class AddProduct extends React.Component {
         }
         console.log(productData)
         alert("Your Product Added Successfully")
-        const path = `products`;
+        const path = PRODUCTPAGE_LINK
+        // const path = `products`;
         this.props.history.push(path);
     }
     render() {
